@@ -23,13 +23,16 @@ App uses a number of open source projects to work properly:
 * [KnpPaginatorBundle] SEO friendly Symfony paginator to sort and paginate
 * [FOSRestBundle] This bundle provides various tools to rapidly develop RESTful API's & applications with Symfony.
 * [Behatch contexts] Behat extension provide most common helper steps
+* [NelmioApiDocBundle] The NelmioApiDocBundle bundle allows you to generate documentation in the OpenAPI (Swagger) format and provides a sandbox to interactively experiment with the API.
+* [NelmioCorsBundle] Adds CORS (Cross-Origin Resource Sharing) headers support in your Symfony application
+
 
 The application uses the following coding standards and quality tools:
 
 ### Doctrine Coding Standard
 
  The [Doctrine Coding Standard] is a set of rules for [PHP_CodeSniffer]. It is based on [PSR-1]
- and [PSR-2] , with some noticeable exceptions/differences/extensions.
+ and [PSR-12] , with some noticeable exceptions/differences/extensions.
  - Keep the nesting of control structures per method as small as possible
  - Abstract exception class names and exception interface names should be suffixed with ``Exception``
  - Abstract classes should not be prefixed or suffixed with ``Abstract``
@@ -54,7 +57,7 @@ The application uses the following coding standards and quality tools:
 
 #### PSR-2
 
-The [PSR-2] the most common coding standard among php programmers.
+The [PSR-12] specification extends, expands and replaces [PSR-2], the coding style guide and requires adherence to [PSR-1], the basic coding standard.
 
 #### PHPStan at level max
 
@@ -196,6 +199,7 @@ docker-compose rm
    [Behatch contexts]: <https://github.com/Behatch/contexts>
    [PostgreSQL]: <https://www.postgresql.org>
    [FOSRestBundle]: <https://symfony.com/doc/master/bundles/FOSRestBundle/index.html>
-    
+   [NelmioCorsBundle]: https://github.com/nelmio/NelmioCorsBundle
+   [NelmioApiDocBundle]: https://symfony.com/doc/current/bundles/NelmioApiDocBundle/index.html    
 
 

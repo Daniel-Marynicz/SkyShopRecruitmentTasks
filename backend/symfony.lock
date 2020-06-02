@@ -174,6 +174,31 @@
     "myclabs/deep-copy": {
         "version": "1.9.5"
     },
+    "nelmio/api-doc-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "c8e0c38e1a280ab9e37587a8fa32b251d5bc1c94"
+        },
+        "files": [
+            "config/packages/nelmio_api_doc.yaml",
+            "config/routes/nelmio_api_doc.yaml"
+        ]
+    },
+    "nelmio/cors-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "6388de23860284db9acce0a7a5d9d13153bcb571"
+        },
+        "files": [
+            "config/packages/nelmio_cors.yaml"
+        ]
+    },
     "nikic/php-parser": {
         "version": "v4.4.0"
     },
@@ -337,6 +362,9 @@
         "files": [
             "phpcs.xml.dist"
         ]
+    },
+    "symfony/asset": {
+        "version": "v5.0.9"
     },
     "symfony/browser-kit": {
         "version": "v5.0.8"
@@ -502,6 +530,9 @@
     "symfony/property-access": {
         "version": "v5.0.8"
     },
+    "symfony/property-info": {
+        "version": "v5.0.9"
+    },
     "symfony/proxy-manager-bridge": {
         "version": "v5.0.8"
     },
@@ -585,6 +616,9 @@
             "templates/base.html.twig"
         ]
     },
+    "symfony/twig-pack": {
+        "version": "v1.0.0"
+    },
     "symfony/validator": {
         "version": "4.3",
         "recipe": {
@@ -624,6 +658,9 @@
     "theseer/tokenizer": {
         "version": "1.1.3"
     },
+    "twig/extra-bundle": {
+        "version": "v3.0.3"
+    },
     "twig/twig": {
         "version": "v3.0.3"
     },
@@ -638,5 +675,8 @@
     },
     "willdurand/negotiation": {
         "version": "v2.3.1"
+    },
+    "zircote/swagger-php": {
+        "version": "3.0.4"
     }
 }

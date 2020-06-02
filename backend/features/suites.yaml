@@ -1,3 +1,3 @@
 imports:
-    - suites/ui.yaml
+    - suites/api.yaml
     - suites/demo.yaml
