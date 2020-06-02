@@ -1,0 +1,9 @@
+default:
+    suites:
+        api:
+            contexts:
+                - behatch:context:rest
+                - behatch:context:json
+                - Behat\MinkExtension\Context\MinkContext
+            filters:
+                tags: "@api"
