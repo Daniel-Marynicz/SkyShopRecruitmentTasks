@@ -21,6 +21,7 @@ App uses a number of open source projects to work properly:
 * [Behat] A php framework for autotesting your business expectations.
 * [PHPStan] PHP Static Analysis Tool - discover bugs in your code without running it!
 * [KnpPaginatorBundle] SEO friendly Symfony paginator to sort and paginate
+* [FOSRestBundle] This bundle provides various tools to rapidly develop RESTful API's & applications with Symfony.
 * [Behatch contexts] Behat extension provide most common helper steps
 
 The application uses the following coding standards and quality tools:
@@ -194,6 +195,7 @@ docker-compose rm
    [KnpPaginatorBundle]: <https://github.com/KnpLabs/KnpPaginatorBundle>
    [Behatch contexts]: <https://github.com/Behatch/contexts>
    [PostgreSQL]: <https://www.postgresql.org>
+   [FOSRestBundle]: <https://symfony.com/doc/master/bundles/FOSRestBundle/index.html>
     
 
 
