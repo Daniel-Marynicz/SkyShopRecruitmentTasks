@@ -65,7 +65,7 @@ class Task01Controller extends AbstractFOSRestController
         );
     }
 
-    private function isAContainsB(string $a, string $b)
+    private function isAContainsB(string $a, string $b) : bool
     {
         if (empty($b) || empty($a)) {
             return false;
