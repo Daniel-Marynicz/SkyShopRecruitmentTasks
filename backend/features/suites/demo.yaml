@@ -1,0 +1,7 @@
+default:
+    suites:
+        demo:
+            contexts:
+                - App\Tests\Behat\Context\DemoContext
+            filters:
+                tags: "@demo"

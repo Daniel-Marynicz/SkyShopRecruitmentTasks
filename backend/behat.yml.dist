@@ -1,0 +1,33 @@
+imports:
+    - features/suites.yaml
+default:
+    extensions:
+        DMarynicz\BehatParallelExtension\Extension:
+            environments:
+                - TEST_DATABASE_URL: sqlite:///%%kernel.project_dir%%/var/data00.db
+                  SYMFONY_DOTENV_VARS:
+                - TEST_DATABASE_URL: sqlite:///%%kernel.project_dir%%/var/data01.db
+                  SYMFONY_DOTENV_VARS:
+                - TEST_DATABASE_URL: sqlite:///%%kernel.project_dir%%/var/data02.db
+                  SYMFONY_DOTENV_VARS:
+                - TEST_DATABASE_URL: sqlite:///%%kernel.project_dir%%/var/data03.db
+                  SYMFONY_DOTENV_VARS:
+                - TEST_DATABASE_URL: sqlite:///%%kernel.project_dir%%/var/data04.db
+                  SYMFONY_DOTENV_VARS:
+                - TEST_DATABASE_URL: sqlite:///%%kernel.project_dir%%/var/data05.db
+                  SYMFONY_DOTENV_VARS:
+                - TEST_DATABASE_URL: sqlite:///%%kernel.project_dir%%/var/data06.db
+                  SYMFONY_DOTENV_VARS:
+                - TEST_DATABASE_URL: sqlite:///%%kernel.project_dir%%/var/data07.db
+                  SYMFONY_DOTENV_VARS:
+        FriendsOfBehat\SymfonyExtension: ~
+        Behatch\Extension: ~
+        Behat\MinkExtension:
+            base_url:  'http://php'
+            sessions:
+                default:
+                    symfony2: ~
+        Behat\Symfony2Extension:
+            kernel:
+                bootstrap: tests/bootstrap.php
+                class: App\Kernel

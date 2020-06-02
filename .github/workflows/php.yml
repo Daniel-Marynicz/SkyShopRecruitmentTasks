@@ -1,0 +1,62 @@
+name: PHP Tests
+
+env:
+  DATABASE_URL: postgresql://app:develop@localhost:5432/app?serverVersion=12}
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./backend
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Test database
+      uses: Daniel-Marynicz/postgresql-action@master
+      with:
+        postgres_image_tag: 12-alpine
+        app_user: app
+        app_user_password: develop
+        app_db: app
+
+    - name: Get Composer Cache Directory
+      id: composer-cache
+      run: |
+        echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+    - uses: actions/cache@v1
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Migrate database test
+      run: ./bin/console doctrine:migrations:migrate  --no-interaction
+
+    - name: Run Quality tests
+      run: composer quality-tests
+
+    - name: Run PHPUnit
+      uses: paambaati/codeclimate-action@v2.6.0
+      env:
+        CC_TEST_REPORTER_ID: 123123
+      with:
+        coverageCommand: ./backend/vendor/bin/phpunit --fail-on-warning --coverage-clover clover.xml  --configuration  ./backend/phpunit.xml.dist
+
+    - name: Run Behat
+      run: ./vendor/bin/behat --colors --strict --stop-on-failure
