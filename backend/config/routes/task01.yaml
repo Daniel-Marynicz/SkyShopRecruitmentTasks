@@ -1,0 +1,4 @@
+api:
+  resource: ../../src/Tasks/Task01/
+  type: annotation
+  prefix: /api
