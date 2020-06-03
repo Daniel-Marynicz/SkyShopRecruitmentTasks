@@ -99,7 +99,7 @@
         ],
         "phpmd": [
             "./vendor/bin/phpmd --exclude src/Migrations src  ansi phpmd.xml.dist",
-            "./vendor/bin/phpmd  test ansi phpmd.xml.dist"
+            "./vendor/bin/phpmd  tests ansi phpmd.xml.dist"
         ],
         "tests": [
             "@phpcbfWithoutErrorCode",
