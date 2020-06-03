@@ -46,7 +46,7 @@ class Task09Test extends TestCase
                     ],
                     'Pozostale' => [],
                 ],
-                // phpcs:disable
+                // phpcs:ignore
                 (object) [
                     'Komputery' => [
                         'Laptopy' =>  [
