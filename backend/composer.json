@@ -89,13 +89,13 @@
             "./vendor/bin/phpcbf || true"
         ],
         "phpstan": [
-            "./vendor/bin/phpstan analyse"
+            "./vendor/bin/phpstan analyse --ansi"
         ],
         "phpunit": [
-            "./vendor/bin/phpunit --fail-on-warning "
+            "./vendor/bin/phpunit --fail-on-warning --colors=always "
         ],
         "behat": [
-            "./vendor/bin/behat --colors --strict --stop-on-failure"
+            "./vendor/bin/behat --colors --strict --stop-on-failure --parallel"
         ],
         "phpmd": [
             "./vendor/bin/phpmd --exclude src/Migrations src  ansi phpmd.xml.dist",
