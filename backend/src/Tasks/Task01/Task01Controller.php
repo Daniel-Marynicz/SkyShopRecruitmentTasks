@@ -50,6 +50,7 @@ class Task01Controller extends AbstractFOSRestController
      *     nullable=false
      *
      * )
+     * @SuppressWarnings(PHPMD.ShortVariable)
      */
     public function getTask01Action(string $a, string $b) : Response
     {
@@ -65,6 +66,9 @@ class Task01Controller extends AbstractFOSRestController
         );
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     */
     private function isAContainsB(string $a, string $b) : bool
     {
         if (empty($b) || empty($a)) {

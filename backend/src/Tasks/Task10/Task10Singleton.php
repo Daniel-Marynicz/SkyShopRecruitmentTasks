@@ -44,6 +44,7 @@ class Task10Singleton
 
     /**
      * Prevent unserializing of the Singleton instance.
+     * @SuppressWarnings(PHPMD.UnusedPrivateMethod)
      */
     // phpcs:ignore
     private function __wakeup() : void
