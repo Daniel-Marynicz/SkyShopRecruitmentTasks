@@ -1,5 +1,7 @@
 # Sky shop recruitment task 
 
+![PHP Tests](https://github.com/Daniel-Marynicz/SkyShopRecruitmentTasks/workflows/PHP%20Tests/badge.svg)
+
 ## Tech
 
 App uses a number of open source projects to work properly:
