@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace App\Tasks\Task05\ValueObject;
+namespace App\Tasks\Task05\Domain\ValueObject;
 
 use Stringable;
 
-abstract class IntValueObject implements Stringable
+abstract class FloatValueObject implements Stringable
 {
-    protected int $value;
+    protected float $value;
 
-    public function __construct(int $value)
+    public function __construct(float $value)
     {
         $this->value = $value;
     }
 
-    public function value() : int
+    public function value() : float
     {
         return $this->value;
     }

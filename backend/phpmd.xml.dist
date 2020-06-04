@@ -14,7 +14,10 @@
     <rule ref="rulesets/codesize.xml" />
     <rule ref="rulesets/controversial.xml" />
     <rule ref="rulesets/design.xml" />
-    <rule ref="rulesets/naming.xml" />
+    <rule ref="rulesets/naming.xml" >
+        <exclude name="ShortVariable"></exclude>
+    </rule>
+
     <rule ref="rulesets/unusedcode.xml" />
 
     <rule ref="rulesets/codesize.xml/ExcessiveMethodLength">
@@ -29,4 +32,11 @@
             <property name="reportLevel" description="The Cyclomatic Complexity reporting threshold"  value="5"/>
         </properties>
     </rule>
+    <rule ref="rulesets/naming.xml/ShortVariable">
+        <properties>
+            <property name="minimum" description="Minimum length for a variable, property or parameter name" value="3"/>
+            <property name="exceptions" description="" value="id,a,b" />
+        </properties>
+    </rule>
+
 </ruleset>

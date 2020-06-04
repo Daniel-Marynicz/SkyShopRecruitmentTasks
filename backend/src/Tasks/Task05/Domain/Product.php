@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tasks\Task05;
+namespace App\Tasks\Task05\Domain;
 
 use function round;
 

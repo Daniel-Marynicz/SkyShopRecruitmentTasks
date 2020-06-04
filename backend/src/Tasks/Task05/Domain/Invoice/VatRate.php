@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Tasks\Task05\Invoice;
+namespace App\Tasks\Task05\Domain\Invoice;
 
-use App\Tasks\Task05\Vat;
+use App\Tasks\Task05\Domain\Vat;
 
 class VatRate
 {

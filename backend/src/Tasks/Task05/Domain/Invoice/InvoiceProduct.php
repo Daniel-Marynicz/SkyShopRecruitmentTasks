@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Tasks\Task05\Invoice;
+namespace App\Tasks\Task05\Domain\Invoice;
 
-use App\Tasks\Task05\Amount;
-use App\Tasks\Task05\Product;
+use App\Tasks\Task05\Domain\Amount;
+use App\Tasks\Task05\Domain\Product;
 
 class InvoiceProduct
 {

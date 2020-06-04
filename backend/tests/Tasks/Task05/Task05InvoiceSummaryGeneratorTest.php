@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace App\Tests\Tasks\Task05;
 
-use App\Tasks\Task05\Amount;
-use App\Tasks\Task05\Invoice\Invoice;
-use App\Tasks\Task05\Invoice\InvoiceProduct;
-use App\Tasks\Task05\Invoice\VatRate;
-use App\Tasks\Task05\Price;
-use App\Tasks\Task05\Product;
-use App\Tasks\Task05\Vat;
+use App\Tasks\Task05\Domain\Amount;
+use App\Tasks\Task05\Domain\Invoice\InvoiceProduct;
+use App\Tasks\Task05\Domain\Invoice\VatRate;
+use App\Tasks\Task05\Domain\Price;
+use App\Tasks\Task05\Domain\Product;
+use App\Tasks\Task05\Domain\Vat;
+use App\Tasks\Task05\Task05InvoiceSummaryGenerator;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionException;
 use function round;
 
-class Task05Test extends TestCase
+class Task05InvoiceSummaryGeneratorTest extends TestCase
 {
     /**
      * @param array<mixed> $products
@@ -26,7 +26,7 @@ class Task05Test extends TestCase
      */
     public function testInvoice(array $products, array $expectedSummaryRates) : void
     {
-        $invoice = new Invoice();
+        $invoice = new Task05InvoiceSummaryGenerator();
         foreach ($products as $product) {
             $invoice->addInvoiceProduct(
                 new InvoiceProduct(

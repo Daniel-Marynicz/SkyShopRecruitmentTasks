@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Tasks\Task05;
+namespace App\Tasks\Task05\Domain;
 
-use App\Tasks\Task05\ValueObject\FloatValueObject;
+use App\Tasks\Task05\Domain\ValueObject\FloatValueObject;
 use function sprintf;
 
 class Vat extends FloatValueObject

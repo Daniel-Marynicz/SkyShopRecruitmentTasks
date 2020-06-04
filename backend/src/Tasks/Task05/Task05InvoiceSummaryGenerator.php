@@ -2,12 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Tasks\Task05\Invoice;
+namespace App\Tasks\Task05;
 
-use App\Tasks\Task05\Vat;
+use App\Tasks\Task05\Domain\Invoice\InvoiceProduct;
+use App\Tasks\Task05\Domain\Invoice\InvoiceSummary;
+use App\Tasks\Task05\Domain\Vat;
 use function round;
 
-class Invoice
+class Task05InvoiceSummaryGenerator
 {
     /** @var InvoiceProduct[] */
     private array $products = [];
