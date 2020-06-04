@@ -19,8 +19,9 @@ App uses a number of open source projects to work properly:
 * [PHP_CodeSniffer] PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards
 * [PHPUnit] The PHP Testing Framework
 * [Behat] A php framework for autotesting your business expectations.
+* [PHPMD] PHP Mess Detector. Tool for auto detecting mess in your code.
+* [Daniel-Marynicz/BehatParallelExtension] This extension is for an executing behat 3.x tests in parallel mode.
 * [PHPStan] PHP Static Analysis Tool - discover bugs in your code without running it!
-* [KnpPaginatorBundle] SEO friendly Symfony paginator to sort and paginate
 * [FOSRestBundle] This bundle provides various tools to rapidly develop RESTful API's & applications with Symfony.
 * [Behatch contexts] Behat extension provide most common helper steps
 * [NelmioApiDocBundle] The NelmioApiDocBundle bundle allows you to generate documentation in the OpenAPI (Swagger) format and provides a sandbox to interactively experiment with the API.
@@ -55,13 +56,17 @@ The application uses the following coding standards and quality tools:
  - Use Null Coalesce Operator ``$foo = $bar ?? $baz``
  - Prefer early exit over nesting conditions or using else
 
-#### PSR-2
+#### PSR-12
 
 The [PSR-12] specification extends, expands and replaces [PSR-2], the coding style guide and requires adherence to [PSR-1], the basic coding standard.
 
 #### PHPStan at level max
 
 [PHPStan] focuses on finding errors in your code without actually running it. It catches whole classes of bugs even before you write tests for the code. It moves PHP closer to compiled languages in the sense that the correctness of each line of the code can be checked before you run the actual line.
+
+#### PHP Mess Detector.
+
+[PHPMD] PHP Mess Detector. Tool for auto detecting mess in code.
 
 #### PHPUnit
 
@@ -107,7 +112,6 @@ A list of all environmental variables can be found in  `docker-compose.yml` file
 The most important environmental variables are 
 
 ```bash
-EXPOSED_POSTGRES_PORT=5432
 EXPOSED_NGINX_PORT=80
 ```
 
@@ -134,8 +138,6 @@ This error comes from xdebug when you are not debugging this application.
 By default, app run's on your [http://localhost](http://localhost) and if you changed the environment variable 
 EXPOSED_NGINX_PORT then app will run on  port selected by you.
 
-In an app you can log in as `demo` user with password `demo`.
-
 The next command's you can need execute  in new terminal window. 
 Please do not hit CTRL+C in a window with `docker-compose up` !
  
@@ -157,11 +159,64 @@ Or for running only behat test you can run
 docker-compose exec php composer behat
 ```
 
-To load some fake data you can run
+Or for running only phpunit test you can run
 
 ```
-docker-compose exec php bin/console doctrine:fixtures:load --append --group=fake
+docker-compose exec php composer phpunit
 ```
+
+### Tasks
+
+#### Task 1
+
+Task 1 is in directory  [backend/src/Tasks/Task01](backend/src/Tasks/Task01) And Behat test for this task you can find in [
+backend/features/api/Task01.feature](backend/features/api/Task01.feature)
+ 
+And By default, on [http://localhost/api/doc](http://localhost/api/doc) you can manually test this task.
+If you changed the environment variable EXPOSED_NGINX_PORT then you can test this on port selected by you.
+
+#### Task 2
+
+Task 2 in directory  [backend/src/Tasks/Task02](backend/src/Tasks/Task02) And PHPunit tests are in  [
+backend/tests/Tasks/Task02](backend/tests/Tasks/Task02)
+
+#### Task 3
+
+Task 3 in directory  [backend/src/Tasks/Task03](backend/src/Tasks/Task03) And PHPunit tests are in  [
+backend/tests/Tasks/Task03](backend/tests/Tasks/Task03)
+
+#### Task 4
+
+Task 4 in directory  [backend/src/Tasks/Task04](backend/src/Tasks/Task04).
+
+#### Task 5
+
+Task 5 in directory  [backend/src/Tasks/Task05](backend/src/Tasks/Task05) And PHPunit tests are in  [
+backend/tests/Tasks/Task05](backend/tests/Tasks/Task05)
+
+#### Task 6
+
+Task 6 in directory  [backend/src/Tasks/Task06](backend/src/Tasks/Task06) And PHPunit tests are in  [
+backend/tests/Tasks/Task06](backend/tests/Tasks/Task06)
+
+#### Task 7
+
+Task 7 in directory  [backend/src/Tasks/Task07](backend/src/Tasks/Task07) And PHPunit tests are in  [
+backend/tests/Tasks/Task07](backend/tests/Tasks/Task06)
+
+#### Task 8
+
+Task 8 is in directory  [backend/src/Tasks/Task08](backend/src/Tasks/Task08) 
+
+#### Task 9
+
+Task 9 is in directory  [backend/src/Tasks/Task09](backend/src/Tasks/Task09) And PHPunit tests are in  [
+backend/tests/Tasks/Task09](backend/tests/Tasks/Task09)
+
+#### Task 10
+
+Task 10 is in directory  [backend/src/Tasks/Task10](backend/src/Tasks/Task10) And PHPunit tests are in  [
+backend/tests/Tasks/Task10](backend/tests/Tasks/Task10)
 
 #### Stop app
 
@@ -201,5 +256,7 @@ docker-compose rm
    [FOSRestBundle]: <https://symfony.com/doc/master/bundles/FOSRestBundle/index.html>
    [NelmioCorsBundle]: https://github.com/nelmio/NelmioCorsBundle
    [NelmioApiDocBundle]: https://symfony.com/doc/current/bundles/NelmioApiDocBundle/index.html    
+   [Daniel-Marynicz/BehatParallelExtension]: https://github.com/Daniel-Marynicz/BehatParallelExtension
+   [PHPMD]: https://github.com/phpmd/phpmd
 
 
