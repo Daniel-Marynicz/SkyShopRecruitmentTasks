@@ -5,7 +5,6 @@
 App uses a number of open source projects to work properly:
 
 * [PHP] required 7.4 version or later
-* [PostgreSQL] The world's most advanced open source database
 * [Docker]      - A Enterprise Container Platform
 * [Docker Compose] - A a tool for defining and running multi-container Docker applications.
 * [Symfony]  - Symfony, High Performance PHP Framework for Web Development
@@ -178,6 +177,9 @@ backend/tests/Tasks/Task02](backend/tests/Tasks/Task02)
 
 Task 3 in directory  [backend/src/Tasks/Task03](backend/src/Tasks/Task03) And PHPunit tests are in  [
 backend/tests/Tasks/Task03](backend/tests/Tasks/Task03)
+
+If you manually execute the `docker-compose exec php bin/console task:task03`.
+Then in  [backend](backend)  You should have the file `Task03Output Y-m-d H.i.log`.
 
 #### Task 4
 
