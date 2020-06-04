@@ -8,6 +8,13 @@ use function sprintf;
 
 class Task03Loop
 {
+    /** @var array<string,string> */
+    private array $textDictionary = [
+        'good' => 'good',
+        'excellent' => 'excellent',
+        'goodexcellent' => 'good and excellent',
+    ];
+
     public function run(OutputWriter $output) : void
     {
         $iterationNumber  = 0;
@@ -32,19 +39,11 @@ class Task03Loop
             return 'Stop!';
         }
 
-        $good      = $this->isDivisibleBy($appearanceNumber, 3);
-        $excellent = $this->isDivisibleBy($appearanceNumber, 5);
+        $good      = $this->isDivisibleBy($appearanceNumber, 3) ? 'good' : null;
+        $excellent = $this->isDivisibleBy($appearanceNumber, 5) ? 'excellent' : null;
+        $textKey   = $good . $excellent;
 
-        switch (true) {
-            case $good && $excellent:
-                return 'good and excellent';
-            case $good:
-                return 'good';
-            case $excellent:
-                return 'excellent';
-            default:
-                return 'ok';
-        }
+        return $this->textDictionary[$textKey] ?? 'ok';
     }
 
     private function isDivisibleBy(int $dividend, int $divisor) : bool
