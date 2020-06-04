@@ -30,12 +30,12 @@ class Task01Controller extends AbstractFOSRestController
      * @OA\Parameter(
      *     name="a",
      *     in="query",
-     *     example="The best rpg game is the witcher 3"
+     *     example="best"
      * )
      * @OA\Parameter(
      *     name="b",
      *     in="query",
-     *     example="best"
+     *     example="The best rpg game is the witcher 3"
      * )
      * @Rest\QueryParam(
      *     name="a",
