@@ -1,11 +1,5 @@
 # Sky shop recruitment task 
 
-## Intro
-
-
-
-## Requirements
-
 ## Tech
 
 App uses a number of open source projects to work properly:
