@@ -60,10 +60,10 @@ if [ "$1" = 'php-fpm' ] ; then
         composer install --prefer-dist --no-progress --no-suggest --no-interaction
     fi
 
-    >&2 echo "Waiting for db to be ready..."
-    waitUntil bin/console doctrine:query:sql "SELECT 1"
+#    >&2 echo "Waiting for db to be ready..."
+#    waitUntil bin/console doctrine:query:sql "SELECT 1"
 
-    bin/console doctrine:migrations:migrate  --no-interaction
+    #bin/console doctrine:migrations:migrate  --no-interaction
     #bin/console doctrine:fixtures:load --append --group=app --no-interaction
 
     >&2 echo "app initialization finished"

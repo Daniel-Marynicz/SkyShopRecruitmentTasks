@@ -152,12 +152,3 @@ ENTRYPOINT ["docker-entrypoint"]
 CMD ["nginx", "-g", "daemon off;"]
 
 
-FROM postgres:12-alpine as postgres
-
-COPY ./docker/postgres/docker-entrypoint-initdb.d /docker-entrypoint-initdb.d
-COPY ./docker/postgres/postgres-healthcheck.sh  /usr/local/bin/postgres-healthcheck.sh
-COPY ./docker/postgres/common-functions.sh /usr/local/bin/common-functions.sh
-
-RUN chmod +x /usr/local/bin/postgres-healthcheck.sh
-
-HEALTHCHECK --start-period=5m CMD bash -c /usr/local/bin/postgres-healthcheck.sh
