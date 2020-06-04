@@ -106,7 +106,8 @@
             "@phpcs",
             "@phpstan",
             "@phpunit",
-            "@behat"
+            "@behat",
+            "@phpmd"
         ],
         "quality-tests": [
             "@phpcs",

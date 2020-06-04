@@ -6,13 +6,24 @@ namespace App\Tests\Tasks\Task03;
 
 use App\Tasks\Task03\OutputWriter;
 use App\Tasks\Task03\Task03Loop;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 class Task03LoopTest extends TestCase
 {
     public function testRun() : void
     {
-        $loop   = new Task03Loop();
+        $loop = new Task03Loop();
+        $loop->run($this->createWriterMock());
+    }
+
+    /**
+     * @return OutputWriter|MockObject
+     *
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     */
+    private function createWriterMock()
+    {
         $writer = $this->createMock(OutputWriter::class);
         $writer
             ->expects($this->exactly(91))
@@ -111,6 +122,6 @@ class Task03LoopTest extends TestCase
                 ['Iteration number: 90, Stop!']
             );
 
-        $loop->run($writer);
+        return $writer;
     }
 }

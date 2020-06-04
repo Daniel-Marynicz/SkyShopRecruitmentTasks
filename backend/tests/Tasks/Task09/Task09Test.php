@@ -22,6 +22,8 @@ class Task09Test extends TestCase
 
     /**
      * @return array<mixed>
+     *
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      */
     public function arrayToObjectProvider() : array
     {

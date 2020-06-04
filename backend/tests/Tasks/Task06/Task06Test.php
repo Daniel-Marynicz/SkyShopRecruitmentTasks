@@ -23,6 +23,8 @@ class Task06Test extends TestCase
 
     /**
      * @return array<mixed>
+     *
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      */
     public function generateTreeProvider() : array
     {

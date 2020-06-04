@@ -29,16 +29,25 @@ class Task06
             $elements           = array_map('trim', $exploded);
             $currentElementName = array_shift($elements);
             $currentTree        = &$tree;
-            while ($currentElementName) {
-                if (! isset($currentTree[$currentElementName])) {
-                    $currentTree[$currentElementName] = [];
-                }
-
-                $currentTree        = &$currentTree[$currentElementName];
-                $currentElementName = array_shift($elements);
-            }
+            self::updateTree($elements, $currentElementName, $currentTree);
         }
 
         return $tree;
+    }
+
+    /**
+     * @param array<mixed> $elements
+     * @param array<mixed> $currentTree
+     */
+    private static function updateTree(array &$elements, ?string $currentElementName, array &$currentTree) : void
+    {
+        while ($currentElementName) {
+            if (! isset($currentTree[$currentElementName])) {
+                $currentTree[$currentElementName] = [];
+            }
+
+            $currentTree        = &$currentTree[$currentElementName];
+            $currentElementName = array_shift($elements);
+        }
     }
 }

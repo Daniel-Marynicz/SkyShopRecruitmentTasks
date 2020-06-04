@@ -36,7 +36,7 @@ class Task10SingletonTest extends TestCase
     public function testClone() : void
     {
         $this->expectException(Error::class);
-        $another = clone $this->singleton;
+        clone $this->singleton;
     }
 
     /**

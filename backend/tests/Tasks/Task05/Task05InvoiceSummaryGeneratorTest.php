@@ -49,6 +49,8 @@ class Task05InvoiceSummaryGeneratorTest extends TestCase
 
     /**
      * @return array<mixed>
+     *
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      */
     public function invoiceProvider() : array
     {
